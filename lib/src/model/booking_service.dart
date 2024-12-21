@@ -37,6 +37,7 @@ class BookingService {
 
   /// The document ID of the booking
   final String? bookingDocId;
+  final bool? serviceStatus;
 
   BookingService({
     this.userEmail,
@@ -50,6 +51,7 @@ class BookingService {
     required this.serviceDuration,
     this.servicePrice,
     this.bookingDocId,
+    this.serviceStatus
   });
 
   BookingService.fromJson(Map<String, dynamic> json)
@@ -63,7 +65,8 @@ class BookingService {
         serviceName = json['serviceName'] as String,
         serviceDuration = json['serviceDuration'] as int,
         servicePrice = json['servicePrice'] as int?,
-        bookingDocId = json['bookingDocId'] as String?;
+        bookingDocId = json['bookingDocId'] as String?,
+        serviceStatus = json['serviceStatus'] as bool?;
 
   Map<String, dynamic> toJson() => {
         'userId': userId,
@@ -77,5 +80,6 @@ class BookingService {
         'bookingStart': bookingStart.toIso8601String(),
         'bookingEnd': bookingEnd.toIso8601String(),
         'bookingDocId': bookingDocId,
+        'serviceStatus': serviceStatus,
       };
 }
