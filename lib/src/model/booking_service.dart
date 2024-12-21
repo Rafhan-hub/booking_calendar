@@ -37,6 +37,8 @@ class BookingService {
 
   /// The document ID of the booking
   final String? bookingDocId;
+
+  /// The status of the service (active/inactive)
   final bool? serviceStatus;
 
   BookingService({
@@ -51,7 +53,7 @@ class BookingService {
     required this.serviceDuration,
     this.servicePrice,
     this.bookingDocId,
-    this.serviceStatus
+    this.serviceStatus,
   });
 
   BookingService.fromJson(Map<String, dynamic> json)
